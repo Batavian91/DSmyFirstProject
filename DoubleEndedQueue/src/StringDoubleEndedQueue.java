@@ -69,5 +69,5 @@ public interface StringDoubleEndedQueue<Type>
      *
      * @return number of elements in the queue
      */
-    public int size();
+    public int getSize();
 }

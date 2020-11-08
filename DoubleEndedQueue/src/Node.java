@@ -1,13 +1,7 @@
 public class Node<Type>
 {
     private Type content;
-    Node previous, next;
-
-    public Node()
-    {
-        this.previous = null;
-        this.next = null;
-    }
+    private Node<Type> previous, next;
 
     public Node(Type content)
     {
@@ -17,22 +11,19 @@ public class Node<Type>
     }
 
     public Type getContent() { return content; }
-    public Node getPrevious() { return previous; }
-    public Node getNext() { return next; }
+    public Node<Type> getPrevious() { return previous; }
+    public Node<Type> getNext() { return next; }
 
-    public void setContent(Type content) { this.content = content; }
-    public void setPrevious(Node previous) { this.previous = previous; }
-    public void setNext(Node next) { this.next = next; }
+    //public void setContent(Type content) { this.content = content; } //this method is never used
+    public void setPrevious(Node<Type> previous) { this.previous = previous; }
+    public void setNext(Node<Type> next) { this.next = next; }
 
-    public boolean equals(Node node)
+    public boolean equals(Node<Type> node) { return this == node; }
+
+    public String toStr()
     {
-        if (this == node) return true;
-        else return false;
-    }
-
-    @Override
-    public String toString()
-    {
-        return "Node {" + " content= " + content + ", previous=" + previous + ", next=" + next + " }";
+        return "Node { " + "content = " + (getContent() == null ? "null " : getContent().toString()) + " " +
+                " previous = " + (getPrevious() == null ? "null" : getPrevious().toString()) + " " +
+                " next = " + (getNext() == null ? "null" : getNext().toString()) + " } ";
     }
 }
