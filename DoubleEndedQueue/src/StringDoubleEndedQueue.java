@@ -44,7 +44,7 @@ public interface StringDoubleEndedQueue<Type>
      * @return the item from the front of the queue
      * @throws NoSuchElementException if the queue is empty
      */
-    public Type getFirst();
+    public Type getFirst() throws NoSuchElementException;
 
     /**
      * return without removing the item at the end of the queue
@@ -52,7 +52,7 @@ public interface StringDoubleEndedQueue<Type>
      * @return the item from the end of the queue
      * @throws NoSuchElementException if the queue is empty
      */
-    public Type getLast();
+    public Type getLast() throws NoSuchElementException;
 
 
     /**

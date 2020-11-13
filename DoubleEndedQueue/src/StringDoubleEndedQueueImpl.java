@@ -44,7 +44,7 @@ public class StringDoubleEndedQueueImpl<Type> implements StringDoubleEndedQueue<
         if (isEmpty())
             throw new NoSuchElementException("The list is already empty!");
 
-        Node<Type> temp = new Node<>(head.getContent());
+        Node<Type> temp = new Node<>(head.getContent()); //create temp node to store first node's content
 
         if (head.equals(tail))
         {
@@ -89,9 +89,9 @@ public class StringDoubleEndedQueueImpl<Type> implements StringDoubleEndedQueue<
     public Type removeLast() throws NoSuchElementException
     {
         if (isEmpty())
-            throw new NoSuchElementException("The list is already empty!");
+            throw new NoSuchElementException("The queue is empty!");
 
-        Node<Type> temp = new Node<>(tail.getContent());
+        Node<Type> temp = new Node<>(tail.getContent()); //create temp node to store last node's content
 
         if (head.equals(tail))
         {
@@ -112,7 +112,7 @@ public class StringDoubleEndedQueueImpl<Type> implements StringDoubleEndedQueue<
      * @return the item from the front of the queue
      * @throws NoSuchElementException if the queue is empty
      */
-    public Type getFirst()
+    public Type getFirst() throws NoSuchElementException
     {
         if (isEmpty())
             throw new NoSuchElementException("The queue is empty!");
@@ -125,7 +125,7 @@ public class StringDoubleEndedQueueImpl<Type> implements StringDoubleEndedQueue<
      * @return the item from the end of the queue
      * @throws NoSuchElementException if the queue is empty
      */
-    public Type getLast()
+    public Type getLast() throws NoSuchElementException
     {
         if (isEmpty())
             throw new NoSuchElementException("The queue is empty!");
@@ -139,12 +139,33 @@ public class StringDoubleEndedQueueImpl<Type> implements StringDoubleEndedQueue<
      * standard output, pass System.out as parameter. E.g.,
      * printQueue(System.out);
      *
-     * @param stream can be of any type of stream output
+     * @param stream stream output
      */
     @Override
     public void printQueue(PrintStream stream)
     {
-
+        try
+        {
+            if (isEmpty())
+                stream.print("The queue is empty!");
+            else
+            {
+                stream.print("Queue:  ");
+                Node<Type> current = head;
+                do
+                {
+                    stream.print(current.getContent() + "  ");
+                    current = current.getNext();
+                }
+                while (current!=null);
+            }
+            stream.println();
+            //stream.close();  //if used with System.out, console is closed
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
     /**

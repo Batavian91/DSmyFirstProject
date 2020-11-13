@@ -14,7 +14,7 @@ public class Node<Type>
     public Node<Type> getPrevious() { return previous; }
     public Node<Type> getNext() { return next; }
 
-    //public void setContent(Type content) { this.content = content; } //this method is never used
+    //public void setContent(Type content) { this.content = content; }
     public void setPrevious(Node<Type> previous) { this.previous = previous; }
     public void setNext(Node<Type> next) { this.next = next; }
 
@@ -22,8 +22,8 @@ public class Node<Type>
 
     public String toStr()
     {
-        return "Node { " + "content = " + (getContent() == null ? "null " : getContent().toString()) + " " +
-                " previous = " + (getPrevious() == null ? "null" : getPrevious().toString()) + " " +
-                " next = " + (getNext() == null ? "null" : getNext().toString()) + " } ";
+        return  this + " { " + "content = " + (getContent() == null ? "null " : getContent().toString()) + " "
+                + " previous = " + (getPrevious() == null ? "null" : getPrevious().toString()) + " "
+                + " next = " + (getNext() == null ? "null" : getNext().toString()) + " } ";
     }
 }
