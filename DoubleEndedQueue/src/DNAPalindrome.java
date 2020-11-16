@@ -39,6 +39,10 @@ public class DNAPalindrome
         return true;
     }
 
+    /**
+     * @return a DNA character's complement
+     * A <-> T , C <-> G
+     * */
     private char getComplement(char c)
     {
         if (c=='A')
@@ -51,6 +55,14 @@ public class DNAPalindrome
             return 'C';
     }
 
+    /**
+     * @param DNA string
+     * Uses a double ended queue to check if
+     * (charAt(i) == complement charAt(n-i)
+     *  or is the empty string)
+     *
+     * Returns false if the above is not fulfilled.
+     * */
     public boolean isWatsonCrick(String DNA)
     {
         if (DNA.equals("")) // the empty string is Watson-Crick complemented palindrome

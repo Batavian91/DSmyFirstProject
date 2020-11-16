@@ -52,6 +52,14 @@ public class PostfixToInfix
         return true;
     }
 
+    /**
+     * Uses double ended queue to build the required infix
+     * notation of a given string in postfix notation.
+     * It behaves as a stack - pushes digits at the end,
+     * then pops them out and pushes an algebraic expression
+     * when an operator is found.
+     * The final expression is stored at the head node.
+     * */
     public String getInfix(String postfix)
     {
         StringDoubleEndedQueueImpl<String> queue = new StringDoubleEndedQueueImpl<>();
