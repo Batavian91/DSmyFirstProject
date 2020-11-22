@@ -42,7 +42,7 @@ public class StringDoubleEndedQueueImpl<Type> implements StringDoubleEndedQueue<
     public Type removeFirst() throws NoSuchElementException
     {
         if (isEmpty())
-            throw new NoSuchElementException("The list is already empty!");
+            throw new NoSuchElementException("The queue is empty!");
 
         Node<Type> temp = new Node<>(head.getContent()); //create temp node to store first node's content
 

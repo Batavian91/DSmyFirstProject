@@ -9,11 +9,19 @@ public class PostfixToInfix
         return input.nextLine();
     }
 
-    private boolean isOperator(char c)
-    {
-        return c=='+' || c=='-' || c=='*'|| c=='/';
-    }
+    /**
+     * Returns true if a given char argument is in (+,-,*,/).
+     * */
+    private boolean isOperator(char c) { return c=='+' || c=='-' || c=='*'|| c=='/'; }
 
+    /**
+     * In the try block, all wrong cases are checked :
+     * 1. String s.length<3 ---> wrong
+     * 2. String s(0) && s(1) not digits and s(last) not operator ---> wrong
+     * 3. String s(i) not digit or (+,-,*,/) ---> wrong
+     * 4. String count(digits) != count(operators)+1 ---> wrong
+     * Else, the expression is valid.
+     * */
     public boolean isValidExpression(String s)
     {
         try
