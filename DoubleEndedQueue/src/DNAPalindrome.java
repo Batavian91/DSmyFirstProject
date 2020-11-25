@@ -103,8 +103,8 @@ public class DNAPalindrome
         }
 
         if (p.isWatsonCrick(userInput))
-            System.out.println("Yes, " + userInput + " is Watson-Crick complemented palindrome!");
+            System.out.println("Yes, \"" + userInput + "\" is Watson-Crick complemented palindrome!");
         else
-            System.out.println("No, " + userInput + " is not Watson-Crick complemented palindrome!");
+            System.out.println("No, \"" + userInput + "\" is not Watson-Crick complemented palindrome!");
     }
 }
